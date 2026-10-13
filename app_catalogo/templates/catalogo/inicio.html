@@ -1,0 +1,11 @@
+<!-- app_catalogo/templates/catalogo/inicio.html -->
+{% extends "catalogo/base.html" %} {# siempre debe ser la primera línea #}
+{% block titulo %}Inicio{% endblock %}
+{% block contenido %}
+<h1>Bienvenido a {{ nombre_sitio }}</h1>
+{% if total > 0 %}
+<p>Tenemos {{ total }} libros en el catálogo.</p>
+{% else %}
+<p>Todavía no hay libros.</p>
+{% endif %}
+{% endblock %}
