@@ -1,0 +1,16 @@
+<!-- app_catalogo/templates/catalogo/autores.html -->
+{% extends "catalogo/base.html" %}
+{% block titulo %}Autores{% endblock %}
+{% block contenido %}
+    <h1>Listado de Autores</h1>
+    
+    <ul>
+    {% for a in autores %}
+        {# Mostramos el nombre del autor y su cantidad calculada #}
+        <li><strong>{{ a.autor }}</strong> ({{ a.cantidad }} libro{{ a.cantidad|pluralize:"s" }})</li>
+    {% empty %}
+        {# Mensaje de respaldo si la lista llega vacía #}
+        <li>No hay autores registrados en la base de datos.</li>
+    {% endfor %}
+    </ul>
+{% endblock %}

@@ -1,3 +1,6 @@
+# Archivos y carpetas que no deben subirse al repositorio
+Documentos/
+
 # Entorno virtual (¡Muy importante no subir esta carpeta!)
 venv/
 env/

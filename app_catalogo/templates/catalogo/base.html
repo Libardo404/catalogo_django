@@ -11,11 +11,16 @@
     <nav>
         <a href="{% url 'catalogo:inicio' %}">Inicio</a> |
         <a href="{% url 'catalogo:lista_libros' %}">Libros</a> |
-        <a href="{% url 'catalogo:acerca' %}">Acerca de</a>
+        <a href="{% url 'catalogo:acerca' %}">Acerca de</a> |
+        <a href="{% url 'catalogo:contacto' %}">Contacto</a> |
+        <a href="{% url 'catalogo:autores' %}">Autores</a> |
+        <a href="{% url 'catalogo:sugerir' %}">Sugerir Libro</a>
     </nav>
+    
     <main>
         {% block contenido %}{% endblock %} {# hueco que cada página rellena #}
     </main>
+    
     <footer>Proyecto de clase ADSO</footer>
 </body>
 

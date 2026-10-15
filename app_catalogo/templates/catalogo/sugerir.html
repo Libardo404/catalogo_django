@@ -1,0 +1,32 @@
+<!-- app_catalogo/templates/catalogo/sugerir.html -->
+{% extends "catalogo/base.html" %}
+{% block titulo %}Sugerir{% endblock %}
+{% block contenido %}
+    <h1>Sugerir un Nuevo Libro</h1>   {# #Ejercicio 6 #}
+
+    {# Sección de Mensajes según las validaciones de la vista #}
+    {% if enviado %}
+        {% if error %}
+            {# El usuario envió el formulario pero vacío #}
+            <p>
+                {{ error }}
+            </p>
+        {% else %}
+            {# El usuario ingresó un título válido #}
+            <p>
+                Gracias, tendremos en cuenta: "{{ titulo }}"
+            </p>
+        {% endif %}
+    {% endif %}
+
+    {# Formulario HTML obligatorio con método POST #}
+    <form method="post">
+        {# Protección Obligatoria contra Ataques de Falsificación (CSRF) #}
+        {% csrf_token %}
+        
+        <label for="id_titulo">Título del Libro:</label>
+        <input type="text" id_titulo name="titulo" value="{{ titulo }}" placeholder="Ej. El Alquimista">
+        
+        <button  type="submit">Enviar sugerencia</button>
+    </form>
+{% endblock %}

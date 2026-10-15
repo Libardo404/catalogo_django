@@ -4,8 +4,18 @@
 {% block contenido %}
 <h1>Bienvenido a {{ nombre_sitio }}</h1>
 {% if total > 0 %}
-<p>Tenemos {{ total }} libros en el catálogo.</p>
+    <p>Tenemos {{ total }} libros en el catálogo.</p>
+
+    <p>Disponibles: {{ disponibles }}</p>
+
+    {# Aquí aplicamos la condición específica del Ejercicio 4 #}
+    {% if prestados == 0 %}
+        <p><strong>¡Todos los libros están en la biblioteca!</strong></p>
+    {% else %}
+        <p>Prestados: {{ prestados }}</p>
+    {% endif %}
+
 {% else %}
-<p>Todavía no hay libros.</p>
+    <p>Todavía no hay libros.</p>
 {% endif %}
 {% endblock %}
